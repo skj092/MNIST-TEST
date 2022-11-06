@@ -33,6 +33,7 @@ class LeNet(nn.Module):
     def forward(self, x):
         # reshaping the input tensor to (batch_size, 1, 28, 28)
         x = x.view(x.size(0), 1, 28, 28)
+        print('shape after reshaping', x.shape)
         x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
         x = F.max_pool2d(F.relu(self.conv2(x)), 2)
         x = x.view(x.size(0), -1)
