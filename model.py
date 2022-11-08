@@ -1,5 +1,5 @@
 import torch.nn as nn 
-from torchsummary import summary
+#from torchsummary import summary
 import torch 
 import torch.nn.functional as F
 
@@ -41,14 +41,3 @@ class LeNet(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-
-
-# test
-def test():
-    # model = Net(input_size=784, num_class = 10)
-    model = LeNet()
-    print('model', model)
-    summary(model, (1, 28, 28))
-
-if __name__=="__main__":
-    test()
